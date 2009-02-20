@@ -66,7 +66,6 @@ namespace :spec do
     end
   end
 
-  # Setup specs for stats
   task :statsetup do
     require 'code_statistics'
     ::STATS_DIRECTORIES << %w(Model\ specs spec/models) if File.exist?('spec/models')
