@@ -1,0 +1,31 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: 10minutes_development
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+staging:
+  adapter: mysql
+  encoding: utf8
+  database: 10minutes_staging
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+    
+test:
+  adapter: mysql
+  encoding: utf8
+  database: 10minutes_test
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: 10minutes_production
+  username: root
+  password: 
+  socket: /tmp/mysql.sock
