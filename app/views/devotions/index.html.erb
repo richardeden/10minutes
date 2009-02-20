@@ -1,0 +1,28 @@
+<h1>Listing devotions</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Verse</th>
+    <th>Thought</th>
+    <th>Prayer</th>
+  </tr>
+
+<% for devotion in @devotions %>
+  <tr>
+    <td><%=h devotion.date %></td>
+    <td><%=h devotion.title %></td>
+    <td><%=h devotion.verse %></td>
+    <td><%=h devotion.thought %></td>
+    <td><%=h devotion.prayer %></td>
+    <td><%= link_to 'Show', devotion %></td>
+    <td><%= link_to 'Edit', edit_devotion_path(devotion) %></td>
+    <td><%= link_to 'Destroy', devotion, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New devotion', new_devotion_path %>

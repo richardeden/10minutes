@@ -1,0 +1,28 @@
+<p>
+  <b>Date:</b>
+  <%=h @devotion.date %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @devotion.title %>
+</p>
+
+<p>
+  <b>Verse:</b>
+  <%=h @devotion.verse %>
+</p>
+
+<p>
+  <b>Thought:</b>
+  <%=h @devotion.thought %>
+</p>
+
+<p>
+  <b>Prayer:</b>
+  <%=h @devotion.prayer %>
+</p>
+
+
+<%= link_to 'Edit', edit_devotion_path(@devotion) %> |
+<%= link_to 'Back', devotions_path %>
