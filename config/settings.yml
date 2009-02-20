@@ -1,17 +1,17 @@
 development: &non_production_settings
   site_url: http://localhost:3000
-  site_name: Bort
-  admin_email: bort@bort.com
+  site_name: 10 Minutes of your time
+  admin_email: admin@disciplex.co.uk
   
 test:
   <<: *non_production_settings
 
 staging:
-  site_url: http://staging.example.com
-  site_name: Bort
-  admin_email: bort@bort.com  
+  site_url: http://staging.disciplex.co.uk
+  site_name: 10 Minutes of your time
+  admin_email: admin@disciplex.co.uk
   
 production:
-  site_url: http://www.example.com
-  site_name: Bort
-  admin_email: bort@bort.com
+  site_url: http://www.disciplex.co.uk
+  site_name: 10 Minutes of your time
+  admin_email: admin@disciplex.co.uk
