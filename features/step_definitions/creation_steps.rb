@@ -64,6 +64,15 @@ Given /^an activated user (\w*) exists$/ do |user|
     @user.roles << user_role
     @user.save!
 end
+
+Given /^an activated author user (\w*) exists$/ do |user|
+  When "I create a user with login #{user}"
+   And "I register a user with login #{user}"
+   And "I activate a user with login #{user}"
+   author_role = Role.create(:name => 'author')
+    @user.roles << author_role
+    @user.save!
+end
  
 Given /^an admin user (\w*) exists$/ do |user|
   When "I create a user with login #{user}"

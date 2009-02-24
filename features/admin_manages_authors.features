@@ -19,4 +19,9 @@ Feature: Administrator login
     When I login as Dave
     And I visit /authors
     Then I should not see "New author"
-    
+  
+  Scenario: Author cannot create another author
+    Given an activated author user Dave exists
+    When I login as Dave
+    And I visit /authors
+    Then I should not see "New author"
