@@ -18,6 +18,7 @@
   <%=h @author.email %>
 </p>
 
-
-<%= link_to 'Edit', edit_author_path(@author) %> |
+<% if @current_user.admin? %>
+  <%= link_to 'Edit', edit_author_path(@author) %> |
+<%end%>
 <%= link_to 'Back', authors_path %>
