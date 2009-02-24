@@ -33,11 +33,20 @@ describe User do
       @user.should be_pending
     end
     
-    it "should return true if user is an admin" do
-      user = User.create!(:name => 'Dave Smith', :login => 'admin', :email => 'test@test.com', :activation_code => nil, :active => true, :password => 'blah1234', :password_confirmation => 'blah1234')
-      admin_role = Role.create!(:name => 'admin')
-      user.roles << admin_role
-      user.admin?.should be_true
+    describe "Permissions" do
+      it "should return true if user is an admin" do
+        user = User.create!(:name => 'Dave Smith', :login => 'admin', :email => 'test@test.com', :activation_code => nil, :active => true, :password => 'blah1234', :password_confirmation => 'blah1234')
+        admin_role = Role.create!(:name => 'admin')
+        user.roles << admin_role
+        user.admin?.should be_true
+      end
+    
+      it "should return false if user is not an admin" do
+        user = User.create!(:name => 'Dave Smith', :login => 'admin', :email => 'test@test.com', :activation_code => nil, :active => true, :password => 'blah1234', :password_confirmation => 'blah1234')
+        author_role = Role.create!(:name => 'author')
+        user.roles << author_role
+        user.admin?.should be_false
+      end
     end
   end
 

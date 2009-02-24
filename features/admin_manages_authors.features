@@ -14,8 +14,8 @@ Feature: Administrator login
     Then I should see "Dave Smith"
     And there should be 1 author in the database
   
-  Scenario: Author cannot create another author
-    Given an activated user Dave who is an author
+  Scenario: Normal user cannot create an author
+    Given an activated user Dave exists
     When I login as Dave
     And I visit /authors
     Then I should not see "New author"

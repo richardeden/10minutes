@@ -23,4 +23,6 @@
 
 <br />
 
-<%= link_to 'New author', new_author_path %>
+<% if @current_user.admin? %>
+  <%= link_to 'New author', new_author_path %>
+<%end%>
