@@ -4,8 +4,7 @@ class CreateAuthors < ActiveRecord::Migration
       t.string :name
       t.text :bio
       t.integer :user_id
-      t.text :email
-
+      t.string :email
       t.timestamps
     end
   end

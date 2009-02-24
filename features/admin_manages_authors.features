@@ -4,13 +4,19 @@ Feature: Administrator login
   So that I can have the ability to add, edit and delete conferences  
     
   Scenario: Admin creates an author
-    Given an activated user Fred exists
+    Given an admin user Fred exists
     When I login as Fred
-    When I visit /authors
+    And I visit /authors
     And I follow "New author"
     And I fill in "name" with "Dave Smith"
     And I fill in "email" with "test@test.com"
     And I press "Create"
     Then I should see "Dave Smith"
     And there should be 1 author in the database
+  
+  Scenario: Author cannot create another author
+    Given an activated user Dave who is an author
+    When I login as Dave
+    And I visit /authors
+    Then I should not see "New author"
     

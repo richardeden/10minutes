@@ -32,6 +32,13 @@ describe User do
       @user.reload
       @user.should be_pending
     end
+    
+    it "should return true if user is an admin" do
+      user = User.create!(:name => 'Dave Smith', :login => 'admin', :email => 'test@test.com', :activation_code => nil, :active => true, :password => 'blah1234', :password_confirmation => 'blah1234')
+      admin_role = Role.create!(:name => 'admin')
+      user.roles << admin_role
+      user.admin?.should be_true
+    end
   end
 
   #

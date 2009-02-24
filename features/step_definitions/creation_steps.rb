@@ -66,7 +66,8 @@ Given /^an admin user (\w*) exists$/ do |user|
   When "I create a user with login #{user}"
    And "I register a user with login #{user}"
    And "I activate a user with login #{user}"
-   @user.admin = true
+   admin_role = Role.create(:name => 'admin')
+   @user.roles << admin_role
    @user.save!
    @user.should be_admin
 end

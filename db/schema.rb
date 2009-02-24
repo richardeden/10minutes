@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20090223123611) do
     t.string   "name"
     t.text     "bio"
     t.integer  "user_id"
-    t.text     "email"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
