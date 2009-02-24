@@ -83,4 +83,13 @@ class AuthorsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def invite
+    @author = Author.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @author }
+    end
+  end
 end
