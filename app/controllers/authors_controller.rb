@@ -26,7 +26,7 @@ class AuthorsController < ApplicationController
   # GET /authors/new.xml
   def new
     @author = Author.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @author }
@@ -42,10 +42,12 @@ class AuthorsController < ApplicationController
   # POST /authors.xml
   def create
     @author = Author.new(params[:author])
-
+    @user = User.find_by_email(@author.email)
     respond_to do |format|
       if @author.save
         flash[:notice] = 'Author was successfully created.'
+        @user.author_id = @author.id
+        @user.save!
         format.html { redirect_to(@author) }
         format.xml  { render :xml => @author, :status => :created, :location => @author }
       else
