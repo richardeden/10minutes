@@ -33,7 +33,8 @@ class InitialMigration < ActiveRecord::Migration
       t.string :salt, :limit => 40
       t.string :remember_token, :limit => 40
       t.string :activation_code, :limit => 40
-      t.string :state, :null => false, :default => 'passive'      
+      t.string :state, :null => false, :default => 'passive'
+      t.integer :author_id   
       t.datetime :remember_token_expires_at
       t.datetime :activated_at
       t.datetime :deleted_at

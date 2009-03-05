@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(:version => 20090223123611) do
   create_table "authors", :force => true do |t|
     t.string   "name"
     t.text     "bio"
-    t.integer  "user_id"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -82,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20090223123611) do
     t.string   "remember_token",            :limit => 40
     t.string   "activation_code",           :limit => 40
     t.string   "state",                                    :default => "passive", :null => false
+    t.integer  "author_id"
     t.datetime "remember_token_expires_at"
     t.datetime "activated_at"
     t.datetime "deleted_at"
