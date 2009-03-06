@@ -51,7 +51,7 @@ Rails::Initializer.run do |config|
   # Make Time.zone default to the specified zone, and make Active Record store time values
   # in the database in UTC, and return them converted to the specified local zone.
   # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
-  config.time_zone = 'UTC'
+  #config.time_zone = 'UTC'
 
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
@@ -76,3 +76,17 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   config.active_record.observers = :user_observer
 end
+
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+   :address => "smtp.example.com",
+   :port => 25,
+   :domain => "example.com",
+   :authentication => :login,
+   :user_name => "foo",
+   :password => "bar",
+}
+
+ActionMailer::Base.default_content_type = "text/html"
+
